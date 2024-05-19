@@ -1,0 +1,43 @@
+---
+interface Props {
+   title: string;
+}
+
+const { title } = Astro.props;
+
+const baseEnvValue = import.meta.env.BASE_URL;
+const baseUrl = baseEnvValue == "/" ? "" : baseEnvValue;
+
+const metaTitle = "Ivona Dobrovská - akreditovaný dopravní psycholog";
+const metaDescription =
+   "Provádění dopravně psychologického vyšetření, které musí absolvovat řidiči při žádosti o vrácení řidičského průkazu.";
+const metaUrl = "https://vita-klejch.github.io/dobrovska_web";
+const metaImgURL = metaUrl + "/socials_img.jpg";
+---
+
+<head>
+   <meta charset='UTF-8' />
+   <meta name='description' content='Astro description' />
+   <meta name='viewport' content='width=device-width' />
+   <link rel='icon' type='image/x-icon' href={baseUrl + "/favicon.ico"} />
+   <meta name='generator' content={Astro.generator} />
+   <title>{title}</title>
+
+   <!-- Primary Meta Tags -->
+   <meta name='title' content={metaTitle} />
+   <meta name='description' content={metaDescription} />
+
+   <!-- Open Graph / Facebook -->
+   <meta property='og:type' content='website' />
+   <meta property='og:url' content={metaUrl} />
+   <meta property='og:title' content={metaTitle} />
+   <meta property='og:description' content={metaDescription} />
+   <meta property='og:image' content={metaImgURL} />
+
+   <!-- Twitter -->
+   <meta property='twitter:card' content='summary_large_image' />
+   <meta property='twitter:url' content={metaUrl} />
+   <meta property='twitter:title' content={metaTitle} />
+   <meta property='twitter:description' content={metaDescription} />
+   <meta property='twitter:image' content={metaImgURL} />
+</head>
