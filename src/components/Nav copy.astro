@@ -1,0 +1,135 @@
+---
+import NavLink from "./NavLink.astro";
+
+interface Props {
+   redirNavigation?: boolean;
+}
+
+const hoverLink =
+   "group text-secondary transition-all duration-300 ease-in-out font-bold cursor-pointer Xpb-2";
+
+const hoverSpan =
+   "pb-2 bg-left-bottom bg-gradient-to-r from-pink-500 to-secondary bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out";
+
+const { redirNavigation = false } = Astro.props;
+
+const baseEnvValue = import.meta.env.BASE_URL;
+const baseUrl = baseEnvValue == "/" ? "" : baseEnvValue;
+---
+
+<div class='px-layout fixed w-full z-20 shadow-md bg-primary text-secondary'>
+   <nav
+      class='js-nav max-w-layoutMax mx-auto flex relative justify-between items-center Xpy-4 h-20 main-container'
+   >
+      <!-- LOGO starts HERE -->
+      <div class='cursor-pointer transition font-bold' data-scrollto='js-home'>
+         <NavLink
+            style={hoverLink}
+            scrollLocation='/'
+            redirNavigation={redirNavigation}
+            link='/'
+         >
+            Yvona Dobrovská <br />
+            <span class={hoverSpan}>Dopravní psychologie</span>
+         </NavLink>
+      </div>
+
+      <!-- LOGO ends HERE -->
+
+      <!-- NAV - small display/mobile nav starts HERE -->
+      <div
+         class='sm:hidden absolute right-0 top-20 shadow-md shadow-white border-0 border-slate-400 divide-y-2 divide-green-500'
+      >
+         {
+            redirNavigation ? (
+               <div class=''>
+                  <a class='' href={baseUrl + "/?redir=portfolio"}>
+                     Portfolio
+                  </a>
+               </div>
+            ) : (
+               <>
+                  <NavLink
+                     link={baseUrl + "/?redir=about"}
+                     scrollLocation='js-about'
+                     style='font-bold px-6 py-3 border-1 cursor-pointer'
+                     redirNavigation={redirNavigation}
+                  >
+                     <span class={hoverSpan}> O vyšetření </span>
+                  </NavLink>
+                  <NavLink
+                     link={baseUrl + "/?redir=about"}
+                     scrollLocation='js-about'
+                     style='font-bold px-6 py-3 border-1 cursor-pointer'
+                     redirNavigation={redirNavigation}
+                  >
+                     <span class={hoverSpan}> Kontakt </span>
+                  </NavLink>
+               </>
+            )
+         }
+      </div>
+      <!-- NAV - small display/mobile nav ends HERE -->
+
+      <!-- BURGER ICON starts here -->
+      <div class='nav__burger-menu js-burger-nav sm:hidden cursor-pointer'>
+         <div class='burger-line bg-secondary w-8 h-[3px] transition-all'></div>
+         <div
+            class='burger-line bg-secondary w-8 h-[3px] my-[5px] transition-all'
+         >
+         </div>
+         <div class='burger-line bg-secondary w-8 h-[3px] transition-all'></div>
+      </div>
+      <!-- BURGER ICON ends here -->
+
+      <!-- NAV - bigger display nav starts HERE -->
+      <div class='hidden sm:flex space-x-4'>
+         <NavLink
+            link={baseUrl + "/?redir=about"}
+            scrollLocation='js-about'
+            style={hoverLink}
+            redirNavigation={redirNavigation}
+         >
+            <span class={hoverSpan}> O vyšetření </span>
+         </NavLink>
+         <NavLink
+            link={baseUrl + "/?redir=contact"}
+            scrollLocation='js-contact'
+            style={hoverLink}
+            redirNavigation={redirNavigation}
+         >
+            <span class={hoverSpan}> Kontakt</span>
+         </NavLink>
+      </div>
+   </nav>
+   <!-- NAV - bigger display nav ends HERE -->
+</div>
+
+<script>
+   // BURGER MENU SETUP
+   const burgerIcon = document.querySelector(".js-burger-nav");
+   const navElement = document.querySelector(".js-nav");
+
+   burgerIcon?.addEventListener("click", (e) => {
+      navElement?.classList.toggle("nav--active");
+      // console.log('klick burger');
+      e.stopPropagation();
+   });
+
+   // CLOSE NAV MENU when clicking somewhere on page
+   window.addEventListener("click", () => {
+      navElement?.classList.remove("nav--active");
+   });
+</script>
+<style>
+   /* BURGER ICON animation */
+   .nav--active .burger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+   }
+   .nav--active .burger-line:nth-child(2) {
+      opacity: 0%;
+   }
+   .nav--active .burger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+   }
+</style>

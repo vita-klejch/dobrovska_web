@@ -1,0 +1,29 @@
+---
+interface Props {
+   redirNavigation: boolean;
+
+   link: string;
+   style?: string;
+   scrollLocation: string;
+}
+
+const {
+   redirNavigation,
+
+   link,
+   style = "",
+   scrollLocation,
+} = Astro.props;
+---
+
+{
+   redirNavigation ? (
+      <a class={style} href={link}>
+         <slot />
+      </a>
+   ) : (
+      <div class={style} data-scrollto={scrollLocation}>
+         <slot />
+      </div>
+   )
+}
