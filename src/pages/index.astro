@@ -2,7 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 
-import image from "../img/hero_img.jpg";
+// import image from "../img/hero_img.jpg";
+import image from "../img/new_hero.jpg";
+import PopUpBox from "../components/PopUpBox.astro";
 // console.log(image);
 const iconListSetup = "w-4 h-4 fill-primary absolute -left-6 sm:-left-7 top-2";
 ---
@@ -30,7 +32,7 @@ const iconListSetup = "w-4 h-4 fill-primary absolute -left-6 sm:-left-7 top-2";
                </div>
             </div>
             <div class='w-1/2 hidden md:block'>
-               <img class='w-full' src={image.src} alt='' />
+               <img class='w-full opacity-75' src={image.src} alt='' />
             </div>
          </div>
       </div>
@@ -48,97 +50,224 @@ const iconListSetup = "w-4 h-4 fill-primary absolute -left-6 sm:-left-7 top-2";
          stroke-linecap='round'
          stroke-linejoin='miter'></path></svg
    >
+   <!-- OPENING SECTION starts here -->
+   <section class='js-opening pb-24 w-full px-layout scroll-mt-28'>
+      <div class='max-w-layoutMax mx-auto'>
+         <h1 class='text-3xl font-bold text-secondary'>Úvod</h1>
+         <div class='mt-6'>
+            Nabízíme dopravně-psychologická vyšetření (tzv. psychotesty) pro
+            všechny kategorie řidičů. Kteří je potřebují absolvovat.
+         </div>
+         <div class='text-xl font-bold my-3 mt-6'>Kategorie řidičů</div>
 
+         <div class='ms-6 sm:ms-12 leading-8'>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'>tzv. vybodovaní řidiči</span> – osoby, které
+               žádají o vrácení řidičského oprávnění podle § 87a odst. 3 písm. a)
+               zákona č. 361/2000 Sb., ve znění pozdějších předpisů)
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'
+                  >řidiči se zákazem řízení či po jeho zákazu</span
+               > – osoby, které žádají o vrácení řidičského oprávnění podle § 87a
+               odst. 3 písm. b), c), d) zákona č. 361/2000 Sb., ve znění pozdějších
+               předpisů)
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'
+                  >profesionální řidiči vozidel nad 7,5 t</span
+               > – držitelé řidičského oprávnění pro skupinu vozidel C1+E, C, C+E
+               dle §87a odst. 1 písm. a) zákona č.361/2000 Sb., ve znění pozdějších
+               předpisů)
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'
+                  >profesionální řidiči vozidel pro přepravu cestujících</span
+               > – držitelé řidičského oprávnění pro skupinu vozidel D1, D1+E, D,
+               D+E dle §87a odst. 1 písm. b) zákona č. 361/2000 Sb., ve znění pozdějších
+               předpisů)
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'
+                  >řidiči rozšiřující si své řidičské oprávnění o sk. C, C+E, D
+                  a D+E</span
+               >
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'
+                  >řidiči senioři a ostatní řidiči na žádost praktického lékaře
+                  nebo specialisty</span
+               >
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'>učitelé autoškol</span>
+               – osoby, které žádají o získání profesního osvědčení ve smyslu § 21
+               odst. 2 písm. c) zákona č. 247/2000 Sb., ve znění pozdějších předpisů
+            </div>
+         </div>
+         <div class='mt-6'>
+            Naše pracoviště má k provádění dopravě-psychologických vyšetření
+            udělenou<span class='font-bold'>
+               akreditaci od Ministerstva dopravy České republiky.</span
+            > Pouze vyšetření od dopravních psychologů akreditovaných Ministerstvem
+            dopravy jsou platná.
+         </div>
+      </div>
+   </section>
+   <!-- OPENING SECTION ends here -->
    <!-- ABOUT SECTION starts here -->
    <section class='js-about pb-24 w-full px-layout scroll-mt-28'>
       <div class='max-w-layoutMax mx-auto'>
          <h1 class='text-3xl mb-6 font-bold text-secondary'>O vyšetření</h1>
-
-         <div class='text-xl font-bold mb-3'>
-            Pro koho je dopravně psychologické vyšetření povinné:
+         <div class='mt-6'>
+            Vyšetření provádíme <span class='font-bold'> individuálně</span> (nikoliv
+            skupinově). Průběh vyšetření trvá přibližně 2-3 hodiny a objednáváme
+            na něj
+            <span class='font-bold'> nejčastěji do 1 týdne.</span>
          </div>
-
+         <div class='mt-6'>
+            Délka konkrétního vyšetření je mj. podmíněna jeho účelem a
+            individuálním pracovním tempem vyšetřované osoby.
+         </div>
+         <div class='mt-6'>
+            Nabízím vám rychlé a profesionální dopravně-psychologické vyšetření
+            pro řidiče. Vyšetření se skládá z následujících částí:
+         </div>
          <div class='ms-6 sm:ms-12 leading-8'>
-            <div class='font-bold relative'>
+            <div class='relative'>
                <Icon classList={iconListSetup} />
-               Pro účely vrácení řidičského oprávnění
+               <span class='font-bold'>Úvodní informativní rozhovor.</span>
             </div>
-            <div class='ms-6 sm:ms-12'>
-               <div class='font-bold relative'>
-                  <Icon classList={iconListSetup} />
-                  vybodovaní řidiči
-               </div>
-               <div class='font-bold relative'>
-                  <Icon classList={iconListSetup} />
-                  řidiči se zákazem činnosti (řízení)
-               </div>
-               <div class='ms-6 sm:ms-12'>
-                  <div class='relative'>
-                     <Icon classList={iconListSetup} />
-                     po jakémkoliv zákazu řízení motorových vozidel v rámci trestního
-                     řízení (soud)
-                  </div>
-                  <div class='relative'>
-                     <Icon classList={iconListSetup} />
-                     po zákazu činnosti, který byl uložen ve správním řízení nejméně
-                     na 6 měsíců
-                  </div>
-               </div>
-               <div class='font-bold relative'>
-                  <Icon classList={iconListSetup} />
-                  řidiči "v podmínce"
-               </div>
-               <div class='ms-6 sm:ms-12 relative'>
-                  <Icon classList={iconListSetup} />
-                  při závazku zdržet se řízení motorových vozidel v rámci podmíněného
-                  odložení podání návrhu na potrestání nebo v rámci podmíněného zastavení
-                  trestního stíhání
-               </div>
-            </div>
-
-            <div class='font-bold relative'>
+            <div class='relative'>
                <Icon classList={iconListSetup} />
-               Pro účely výkonu zaměstnání a získání kvalifikace
+               <span class='font-bold'
+                  >Rozhovor za účelem získání relevantních anamnestických a
+                  dalších potřebných údajů.</span
+               >
             </div>
-            <div class='ms-6 sm:ms-12 relative'>
+            <div class='relative'>
                <Icon classList={iconListSetup} />
-               <span class='font-bold'>
-                  držitelé řidičského oprávnění skupin C1+E, C, C+E,
-               </span>
-               pokud řídí nákladní nebo speciální automobil o největší povolené hmotnosti
-               nad 7500 kg nebo soupravu nákladního či speciálního automobilu a přípojného
-               vozidla, jejíž největší povolená hmotnost převyšuje 7500 kg
+               <span class='font-bold'
+                  >Testové vyšetření psychické výkonnosti</span
+               > – zejména testování paměti, pozornosti, intelektu, schopnosti reagovat
+               na vizuální a akustické podněty a adekvátně na ně reagovat.
             </div>
-            <div class='ms-6 sm:ms-12 relative'>
+            <div class='relative'>
                <Icon classList={iconListSetup} />
-               <span class='font-bold'>
-                  držitelé řidičského oprávnění skupin D1+E, D nebo D+E,
-               </span>
-               pokud řídí motorové vozidlo, zařazené do některé z těchto skupin
+               <span class='font-bold'
+                  >Testové vyšetření vybraných osobnostních rysů a vlastností,</span
+               > např. odolnosti vůči zátěži, emocionální stability/lability či sklonu
+               k riskování.
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'
+                  >Zhodnocení výstupů z testů a rozhovoru, seznámení s výsledky
+                  a závěrem vyšetření a vystavení posudku o výsledku
+                  dopravně-psychologického vyšetření.</span
+               >
             </div>
          </div>
-
-         <div class='leading-6'>
-            <div class='my-6'>
-               Dopravně psychologickému vyšetření se musí tito řidiči podrobit
-               před zahájením činnosti, dále nejdříve 6 měsíců před dosažením
-               věku 50 let a pak každých 5 let.
-            </div>
-            <div>
-               <h2>Co s sebou na vyšetření přinést:</h2>
-            </div>
-            <div class='relative ms-6 sm:ms-12'>
-               <Icon classList={iconListSetup} />
-               <span class='font-bold'>
-                  lékařský posudek o zdravotní způsobilosti k řízení motorových
-                  vozidel
-               </span>
-               (za úplatu vydá Váš obvodní lékař)
-            </div>
+         <div class='mt-6'>
+            V průběhu dopravně-psychologického vyšetření absolvujete několik
+            psychodiagnostických testů, které zjistí vaše předpoklady k řízení
+            motorových vozidel. Zjišťujeme například pozornost, reakční čas,
+            osobnostní vlastnosti apod. Výsledky testů respektují věková
+            pravidla. Před každým testem budete mít možnost si několik úloh
+            z testů pro řidiče vyzkoušet ve formě zácviku, test vám bude pečlivě
+            vysvětlen a samozřejmě se můžete zeptat na případné nejasnosti.
          </div>
       </div>
    </section>
    <!-- ABOUT SECTION ends here -->
+   <!-- GET READY SECTION starts here -->
+   <section class='js-get-ready pb-24 w-full px-layout scroll-mt-28'>
+      <div class='max-w-layoutMax mx-auto'>
+         <h1 class='text-3xl mb-6 font-bold text-secondary'>
+            Jak se připravit?
+         </h1>
+         <div class='mt-6'>
+            Rozhodně není třeba podléhat zbytečnému stresu. Ideální stav je,
+            pokud jste během dopravně-psychologického vyšetření v dobré
+            psychické a fyzické kondici. Před vyšetřením si dopřejte odpočinek a
+            dostatek kvalitního spánku. Před vyšetřením nepožívejte alkoholické
+            nápoje, ani jiné psychoaktivní látky. Nevynechejte užití léků, které
+            pravidelně užíváte na lékařský předpis.
+         </div>
+         <div class='text-xl font-bold my-3 mt-6'>
+            Doporučení, kdy vyšetření nepodstupovat
+         </div>
+         <div class='ms-6 sm:ms-12 leading-8'>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               Po náročné pracovní či noční směně.
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               Při počínajícím onemocnění, které by mohlo nepříznivě ovlivnit výsledky
+               vašeho vyšetření.
+            </div>
+         </div>
+         <div class='text-xl font-bold my-3 mt-6'>
+            Co k dopravně-psychologickému vyšetření budete potřebovat?
+         </div>
+         <div class='ms-6 sm:ms-12 leading-8'>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'>
+                  Občanský průkaz nebo jiný průkaz totožnosti</span
+               >
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'> Výpis z evidenční karty řidiče, </span> který
+               vám vydá příslušný odbor dopravy v místě Vašeho trvalého bydliště.
+               Tento výpis nezískáte na Czech Pointu.
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'>
+                  Lékařský posudek o zdravotní způsobilosti k řízení motorových
+                  vozidel,
+               </span> který vám za úplatu vydá váš obvodní lékař. Pozor, posudek
+               nesmí být starší než 30 dnů.
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               <span class='font-bold'>
+                  Pokud vás na vyšetření odeslal lékař,
+               </span> tak je třeba přinést
+
+               <span class='font-bold'>
+                  žádanku o vyšetření, popřípadě poskytnuté lékařské zprávy.
+               </span>
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               Řidičský průkaz, pokud vám nebyl odebrán.
+            </div>
+            <div class='relative'>
+               <Icon classList={iconListSetup} />
+               Kompenzační pomůcky (brýle, naslouchadla apod.).
+            </div>
+         </div>
+         <div class='text-xl font-bold my-3 mt-6'>
+            Jak se na dopravně-psychologické vyšetření objednat?
+         </div>
+         <div class='mt-6'>
+            Kontaktujte nás telefonem na číslo +420 602 377 568 nebo emailem na
+            yvona.dobrovska@seznam.cz
+         </div>
+      </div>
+   </section>
+   <!-- GET READY SECTION ends here -->
 
    <!-- CONTACT SECTION starts here -->
    <section class='js-contact pb-12 w-full px-layout scroll-mt-28'>
@@ -179,7 +308,17 @@ const iconListSetup = "w-4 h-4 fill-primary absolute -left-6 sm:-left-7 top-2";
                <div
                   class='flex gap-3 flex-row-reverse justify-end items-center md:flex-row'
                >
-                  +420 602 377 568
+                  <PopUpBox
+                     maintitle='+420 602 377 568'
+                     tooltipText='Klikněte pro zkopírování'
+                     altText='Tel. číslo bylo zkopírováno'
+                  />
+                  <!-- <div class='js-copy-number'>
+                     <span class='js-click-tooltip'
+                        >Klikněte pro zkopírování</span
+                     >
+                     +420 602 377 568
+                  </div> -->
                   <svg
                      class='w-6 mt-1 min-w-6 fill-secondary'
                      xmlns='http://www.w3.org/2000/svg'
@@ -193,7 +332,11 @@ const iconListSetup = "w-4 h-4 fill-primary absolute -left-6 sm:-left-7 top-2";
                <div
                   class='flex gap-3 flex-row-reverse justify-end md:flex-row items-center'
                >
-                  <div>yvona.dobrovska@seznam.cz</div>
+                  <div></div>
+                  <PopUpBox
+                     maintitle='yvona.dobrovska@seznam.cz'
+                     altText='E-mail byl zkopírován.'
+                  />
 
                   <svg
                      class='w-6 mt-1 min-w-6 fill-secondary'
@@ -222,38 +365,51 @@ const iconListSetup = "w-4 h-4 fill-primary absolute -left-6 sm:-left-7 top-2";
             </div>
             <br />
          </div>
+         <div class='mt-12 text-center'>
+            Prosíme o vaši pozornost zejména při domluvě o místu vyšetření a
+            souvisejícím pakováním.
+         </div>
 
          <!-- CONTACT SECTION ends here -->
-
-         <style>
-            .clip-test {
-               background-color: green;
-               /* clip-path: polygon(100% 0, 0 0, 100% 100%); */
-               clip-path: polygon(0 0, 100% 0, 100% 34%, 0 10%);
-            }
-         </style>
       </div>
-   </section></Layout
->
+   </section>
+</Layout>
 
 <script>
    // SCROLL set up
    // location on page - for scrolling to SECTION
-   // const locationPortfolio = document.querySelector(".js-portfolio");
-   // const locationContact = document.querySelector(".js-contact");
-   // const locationReference = document.querySelector(".js-reference");
 
+   // search for all elements with atribute data-scrollTo
    const navButtons = document.querySelectorAll<HTMLElement>("[data-scrollTo]");
-   // console.log(navButtons);
 
    navButtons.forEach((btn) => {
       const selector = btn.dataset.scrollto;
       btn.addEventListener("click", () => {
-         // console.log(btn);
-         // console.log(selector);
          document
             .querySelector(`.${selector}`)
             ?.scrollIntoView({ behavior: "smooth" });
       });
    });
+
+   // POPUP BOX --------------------------------------------------
+   // START: minimal JS - need for PopUpBox to work
+   const triggerAreas = document.querySelectorAll<HTMLElement>(".popupBox");
+
+   triggerAreas.forEach((trigger) => {
+      const toolTip = trigger.querySelector(".popupTooltip");
+      trigger.addEventListener("click", () => {
+         navigator.clipboard.writeText(
+            trigger.dataset.maintitle ||
+               "Omlouváme se ale došlo k chybě při kopírování"
+         );
+         // console.log("zkopírováno: " + trigger.dataset.maintitle);
+         const newToolTip = trigger.dataset.alttext || "Zkopírováno";
+         toolTip && (toolTip.innerHTML = newToolTip);
+      });
+      trigger.addEventListener("mouseout", () => {
+         const tooltip = trigger.dataset.tooltip || "Klikněte pro zkopírování";
+         toolTip && (toolTip.innerHTML = tooltip);
+      });
+   });
+   // END: minimal JS - need for PopUpBox to work------------------
 </script>

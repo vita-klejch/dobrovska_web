@@ -1,9 +1,116 @@
 ---
+import PopUpBox from "../components/PopUpBox.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title='Dobrovská - dopravní psychologie' redirNavigation={true}>
-   <div class='py-36'>this is test</div>
-   <div class='py-36'>this is test</div>
-   <div class='py-36'>this is test</div>
+   <div class='w-96 m-auto'>
+      <div class='py-36'>this is test</div>
+      <!-- <div class='js-copy-number'>
+         <span class='js-click-tooltip'> XXX Klikněte pro zkopírování XXX</span>
+         +420 602 377 568
+      </div> -->
+      <!-- <div class='py-10'>
+         <PopUpBox
+            mainTitle='dlouhy-email@seznam.cz'
+            tooltipText='Klikněte'
+            altText='E-mail byl zkopírován'
+            type='top'
+         />
+      </div>
+      <div class='py-10'>
+         <PopUpBox
+            mainTitle='dl'
+            tooltipText='Klikněte'
+            altText='E-mail byl zkopírován'
+            type='top'
+         />
+      </div>
+      <div class='py-10'>
+         <PopUpBox
+            mainTitle='long long londdddddddddddddddg long'
+            tooltipText='Klikněte'
+            altText='Číslo bylo zkopírováno'
+            type='bottom'
+         />
+      </div>
+      <div class='py-10'>
+         <PopUpBox
+            mainTitle='dd'
+            tooltipText='Klikněte'
+            altText='Číslo bylo zkopírováno'
+            type='bottom'
+         />
+      </div> -->
+      <!-- <div class='py-8'>
+         <PopUpBox
+            mainTitle='long'
+            tooltipText='Klikněte'
+            altText='Číslo bylo zkopírováno'
+            type='bottom'
+         />
+      </div>
+      <div class='py-8'>
+         <PopUpBox
+            mainTitle='long long long'
+            tooltipText='Klikněte'
+            altText='Číslo bylo zkopírováno'
+            type='bottom'
+         />
+      </div> -->
+      <div class='py-8'>
+         xxx
+         <PopUpBox
+            tooltipText='Klikněte pro zkopírování'
+            altText='Číslo bylo zkopírováno'
+            maintitle='test'>test</PopUpBox
+         >
+         <br />
+         <PopUpBox
+            tooltipText='Klikněte pro zkopírování'
+            altText='Číslo bylo zkopírováno'
+            maintitle='asd asd asd'
+            type='left'
+         />
+         <br />
+         <PopUpBox
+            tooltipText='Klikněte pro zkopírování'
+            altText='Číslo bylo zkopírováno'
+            maintitle='asd asd asd'
+            type='right'
+         />
+         <br />
+         <PopUpBox
+            tooltipText='Klikněte pro zkopírování'
+            altText='Číslo bylo zkopírováno'
+            maintitle='asdfasf kjhkljhkjhklj hhkjh lk'
+            type='bottom'>test test test test</PopUpBox
+         >
+      </div>
+   </div>
 </Layout>
+
+<script>
+   // START: minimal JS - need for PopUpBox to work
+   const triggerAreas = document.querySelectorAll<HTMLElement>(".popupBox");
+
+   triggerAreas.forEach((trigger) => {
+      const toolTip = trigger.querySelector(".popupTooltip");
+      trigger.addEventListener("click", () => {
+         navigator.clipboard.writeText(
+            trigger.dataset.maintitle ||
+               "Omlouváme se ale došlo k chybě při kopírování"
+         );
+         // console.log("zkopírováno: " + trigger.dataset.maintitle);
+         // console.log("alt text: " + trigger.dataset.alttext);
+         // console.log(trigger.dataset);
+         const newToolTip = trigger.dataset.alttext || "Zkopírováno";
+         toolTip && (toolTip.innerHTML = newToolTip);
+      });
+      trigger.addEventListener("mouseout", () => {
+         const tooltip = trigger.dataset.tooltip || "Klikněte pro zkopírování";
+         toolTip && (toolTip.innerHTML = tooltip);
+      });
+   });
+   // END: minimal JS - need for PopUpBox to work
+</script>

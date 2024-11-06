@@ -17,9 +17,14 @@ export default {
             // primary: "#2563eb", // light blue
             // primary: "#334155", // dark green
             // primary: "#1d3734", // Ivca green
-            primary: "#ceb8aa",
+            // primary: "#ceb8aa",  // FIRST version
+            // primary: "#c19f50", // test version
+            // primary: "#be9173", // test version - not bad
+            primary: "#cda489", // test version - svetlejsi
+
             // secondary: "#1b5f57", //dark green
-            secondary: "#144a44", //dark green
+            // secondary: "#144a44", //dark green
+            secondary: "#043d48", //test
             primaryText: "rgb(241, 245, 249)", // light color/almost white
             // primaryText: "red", // light color/almost white
             secondaryText: "black", // dark color

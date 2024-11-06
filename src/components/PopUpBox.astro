@@ -1,0 +1,142 @@
+---
+interface Props {
+   maintitle: string;
+   tooltipText?: string;
+   altText?: string;
+   type?: "top" | "bottom" | "left" | "right";
+}
+
+const {
+   maintitle,
+   tooltipText = "Klikněte pro zkopírování",
+   altText = "Zkopírováno",
+   type = "top",
+} = Astro.props;
+
+let popupType = "";
+switch (type) {
+   case "top":
+      popupType = "popupTop";
+      break;
+   case "bottom":
+      popupType = "popupBottom";
+      break;
+   case "left":
+      popupType = "popupLeft";
+      break;
+   case "right":
+      popupType = "popupRight";
+      break;
+}
+---
+
+<div
+   class='popupBox'
+   data-tooltip={tooltipText}
+   data-alttext={altText}
+   data-maintitle={maintitle}
+>
+   <span class={"popupTooltip " + popupType}> {tooltipText}</span>
+   {maintitle}
+</div>
+
+<style>
+   .popupBox {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+   }
+   .popupBox:hover {
+      text-decoration: underline;
+   }
+
+   .popupBox:hover .popupTooltip {
+      text-decoration: underline;
+      visibility: visible;
+      text-decoration: none;
+   }
+   .popupBox .popupTooltip {
+      position: absolute;
+      display: inline-block;
+      white-space: nowrap;
+      visibility: hidden;
+      padding: 5px 10px;
+      text-align: center;
+      background-color: theme(colors.primary);
+      color: theme(colors.secondary);
+      border-radius: 10px;
+      font-size: 0.7rem;
+   }
+   .popupBox .popupTooltip::after {
+      content: "";
+      position: absolute;
+      margin-left: -7px;
+      border-width: 7px;
+      border-style: solid;
+   }
+   .popupTop {
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%, -3px);
+   }
+   .popupTop::after {
+      top: 100%;
+      left: 50%;
+      border-color: theme(colors.primary) transparent transparent transparent;
+   }
+   .popupBottom {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 8px);
+   }
+   .popupBottom::after {
+      bottom: 100%;
+      left: 50%;
+      border-color: transparent transparent theme(colors.primary) transparent;
+   }
+   .popupLeft {
+      top: 50%;
+      right: 100%;
+      transform: translate(-10px, -50%);
+   }
+   .popupLeft::after {
+      top: 50%;
+      transform: translate(6px, -50%);
+      left: 100%;
+      border-color: transparent transparent transparent theme(colors.primary);
+   }
+   .popupRight {
+      top: 50%;
+      left: 100%;
+      transform: translate(10px, -50%);
+   }
+   .popupRight::after {
+      top: 50%;
+      transform: translate(1px, -50%);
+      right: 100%;
+      border-color: transparent theme(colors.primary) transparent transparent;
+   }
+</style>
+
+<!-- THIS HAS to be in PARENT component: -->
+<!-- <script>
+   // START: minimal JS - need for PopUpBox to work
+   const triggerAreas = document.querySelectorAll<HTMLElement>(".popupBox");
+
+   triggerAreas.forEach((trigger) => {
+      const toolTip = trigger.querySelector(".popupTooltip");
+      trigger.addEventListener("click", () => {
+         navigator.clipboard.writeText(
+            trigger.dataset.maintitle ||
+               "Omlouváme se ale došlo k chybě při kopírování"
+         );
+         const newToolTip = trigger.dataset.alttext || "Zkopírováno";
+         toolTip && (toolTip.innerHTML = newToolTip);
+      });
+      trigger.addEventListener("mouseout", () => {
+         const tooltip = trigger.dataset.tooltip || "Klikněte pro zkopírování";
+         toolTip && (toolTip.innerHTML = tooltip);
+      });
+   });
+   // END: minimal JS - need for PopUpBox to work
+</script> -->
